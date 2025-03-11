@@ -1,10 +1,8 @@
 # Kubernetes Mutating Admission webhook HELM chart
 
-Useful links.
+## Using the chart:
+- These charts are stored as releases and can be accessed through helm without the need for git credentials as it is public.
+- Access the chart from the command line using `helm repo add mex-aws-token-injector "https://raw.githubusercontent.com/PrefectHQ/mex-aws-token-injector/gh-pages"`
 
-[Kubernetes Mutating Admission webhook](https://github.com/ealebed/token-injector/blob/master/README.md)
-[certificator Tool](https://github.com/ealebed/admission-webhook-certificator/blob/master/README.md)
-[gtoken-webhook](https://github.com/ealebed/token-injector/blob/master/cmd/token-injector-webhook/README.md)
-[gtoken Tool](https://github.com/ealebed/token-injector/blob/master/cmd/token-injector/README.md)
-
-[Configuration](https://github.com/ealebed/token-injector/blob/master/admission_webhook_configuration.md)
+## Build and Release
+- The chart will be built automatically upon merge to main with changes in the `helm-chart` directory. 

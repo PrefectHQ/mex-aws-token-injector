@@ -6,7 +6,9 @@ name: 'Build and Push Container Images'
       - main
     types:
       - closed
-  workflow_dispatch: {}
+  push:
+    paths:
+      - helm-chart/**
 
 jobs:
   build_and_push_token_injector_chart:

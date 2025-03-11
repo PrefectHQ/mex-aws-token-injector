@@ -25,6 +25,6 @@ labels:
   app: token-injector-admission-webhook
 
 # PEM encoded CA bundle which will be used to validate the webhook’s server certificate
-# To pass the value 'in runtime' when running helm command you can use `--set` parameter, e.g.:
-# helm install ... --set apiserverCABundle=$(kubectl config view --raw --minify --flatten -o jsonpath='{.clusters[].cluster.certificate-authority-data}')
+# We will pass this from a flux secret upon installation since we cannot natively pass
+# the value from a k8s secret to the the CR for MutatingWebhookConfiguration
 apiserverCABundle: ""
