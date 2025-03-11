@@ -3,6 +3,16 @@ entries:
   token-injector-admission-webhook:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2025-03-11T16:07:20.292838694Z"
+    description: A Helm chart for Kubernetes Mutating Admission webhook
+    digest: 0f033c93b9db3ea82c50f1ca912c33e06193af860481eac818d96d3c91658d5e
+    name: token-injector-admission-webhook
+    type: application
+    urls:
+    - token-injector-admission-webhook-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2025-03-11T16:05:30.834683668Z"
     description: A Helm chart for Kubernetes Mutating Admission webhook
     digest: 640a02ae4477827a4e11f7c883cce8832f3af9544d38251dc3785a48df8eaf1c
@@ -11,4 +21,4 @@ entries:
     urls:
     - token-injector-admission-webhook-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-11T16:05:30.8346903Z"
+generated: "2025-03-11T16:07:20.292844515Z"
