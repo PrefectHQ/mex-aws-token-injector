@@ -1,12 +1,9 @@
 name: 'Build and Push Token Injector Helm Chart'
 
 "on":
-  pull_request:
+  push:
     branches:
       - main
-    types:
-      - closed
-  push:
     paths:
       - charts/**
       - .github/workflows/release-token-injector-chart.yml
