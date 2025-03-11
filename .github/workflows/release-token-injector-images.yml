@@ -64,6 +64,11 @@ jobs:
       - get_image_version
       - check_if_code_changed
     runs-on: ubuntu-latest
+    permissions:
+      # required to read from the repo
+      contents: read
+      # required to obtain Google Cloud service account credentials
+      id-token: write
     env:
       SHORT_SHA: ${{ needs.get_image_version.outputs.short_sha }}
     steps:
@@ -106,6 +111,11 @@ jobs:
     needs:
       - get_image_version
       - check_if_code_changed
+    permissions:
+      # required to read from the repo
+      contents: read
+      # required to obtain Google Cloud service account credentials
+      id-token: write
     runs-on: ubuntu-latest
     env:
       SHORT_SHA: ${{ needs.get_image_version.outputs.short_sha }}
