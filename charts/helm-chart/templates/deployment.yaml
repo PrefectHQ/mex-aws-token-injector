@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: admission-webhook-deployment
+  name: token-injector-admission-webhook-deployment
   namespace: {{ .Values.namespace }}
   labels:
   {{- range $key, $value := .Values.labels }}
@@ -23,7 +23,7 @@ spec:
       {{- end }}
     spec:
       containers:
-        - name: admission-webhook
+        - name: token-injector-admission-webhook
           image: {{ .Values.webhookImage }}
           imagePullPolicy: Always
           args:

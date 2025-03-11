@@ -2,16 +2,18 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: admission-webhook-cr
+  name: token-injector-admission-webhook-cr
   labels:
-    app: admission-webhook
+  {{- range $key, $value := .Values.labels }}
+    {{ $key }}: {{ tpl ($value | toString) $ }}
+  {{- end }}
 rules:
   - apiGroups: [""]
     resources: [pods, events]
-    verbs: ["*"]
+    verbs: ["VerbAll"]
   - apiGroups: [apps]
     resources: [deployments, daemonsets, replicasets, statefulsets]
-    verbs: ["*"]
+    verbs: ["VerbAll"]
   - apiGroups: [autoscaling]
     resources: ["horizontalpodautoscalers", "horizontalpodautoscalers/status"]
     verbs: ["get", "list", "watch", "create", "patch", "update", "delete", "deletecollection"]
@@ -20,11 +22,17 @@ rules:
     verbs: [get]
 ---
 # Cluster Role for creating secrets with client certificate which is signed by K8S CA and private key
-# More details: https://github.com/ealebed/admission-webhook-certificator
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: webhook-cert-sa-cr
+  name: token-injector-admission-webhook-cert-setup-cr
+  annotations:
+    "helm.sh/hook": pre-install,pre-upgrade,post-install,post-upgrade
+    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
+  labels:
+  {{- range $key, $value := .Values.labels }}
+    {{ $key }}: {{ tpl ($value | toString) $ }}
+  {{- end }}
 rules:
   - apiGroups: [admissionregistration.k8s.io]
     resources: [mutatingwebhookconfigurations]

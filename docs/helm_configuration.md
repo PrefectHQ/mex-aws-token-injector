@@ -36,9 +36,9 @@ For example:
 gcloud container clusters get-credentials regional-cluster-test --region us-west1 --project ylebi-rnd
 ```
 
-## Deploy HELM chart
+## Manually deploy Helm chart
 ```bash
-cd ../helm-chart
+cd ../charts/helm-chart
 ```
 
 ```bash
