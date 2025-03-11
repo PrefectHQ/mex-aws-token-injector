@@ -1,12 +1,9 @@
 name: 'Build and Push Container Images'
 
 "on":
-  pull_request:
+  push:
     branches:
       - main
-    types:
-      - closed
-  push:
     paths:
       - '!helm-chart/**'
       - '!.github/workflows/release-token-injector-chart.yml'

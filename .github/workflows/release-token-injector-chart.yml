@@ -1,4 +1,4 @@
-name: 'Build and Push Container Images'
+name: 'Build and Push Token Injector Helm Chart'
 
 "on":
   pull_request:
@@ -8,7 +8,7 @@ name: 'Build and Push Container Images'
       - closed
   push:
     paths:
-      - helm-chart/**
+      - charts/**
       - .github/workflows/release-token-injector-chart.yml
 
 jobs:
@@ -37,7 +37,7 @@ jobs:
         uses: helm/chart-releaser-action@v1.7.0
         # https://github.com/helm/chart-releaser-action#inputs
         with:
-          charts_dir: helm-chart
+          charts_dir: charts
           # Skip package upload if release already exists
           # so we can merge to main w/o triggering a release commit
           skip_existing: true
