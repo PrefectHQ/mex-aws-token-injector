@@ -43,9 +43,7 @@ The `token-injector` tool can get Google Cloud ID token when running under GCP S
 
 ## Mutating Webhook Configuration
 All required steps for configuring Kubernetes Mutating Admission webhook are described in separate documents:
-- [Manual configuration](./docs/manual_configuration.md)
-- [Terraform configuration](./docs/terraform_configuration.md)
-- [HELM chart configuration](./docs/helm_configuration.md)
+- [Helm chart configuration](./docs/helm_configuration.md)
 
 ## External references
 - [Amazon EKS Pod Identity Webhook](https://github.com/aws/amazon-eks-pod-identity-webhook)
