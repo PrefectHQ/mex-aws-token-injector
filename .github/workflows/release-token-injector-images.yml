@@ -24,7 +24,7 @@ jobs:
           filters: |
             source_code:
               - cmd/token-injector/**
-              - .github/release-token-injector-images.yml
+              - .github/workflows/release-token-injector-images.yml
       - name: Detect if token-injector-webhook source code changed
         uses: dorny/paths-filter@v3
         id: changes_token_injector_webhook
@@ -32,7 +32,7 @@ jobs:
           filters: |
             source_code:
               - cmd/token-injector-webhook/**
-              - .github/release-token-injector-images.yml
+              - .github/workflows/release-token-injector-images.yml
     outputs:
       check_token_injector: ${{ steps.changes_token_injector.outputs.source_code }}
       check_token_injector_webhook: ${{ steps.changes_token_injector_webhook.outputs.source_code }}
