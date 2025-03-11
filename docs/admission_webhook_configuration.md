@@ -1,7 +1,7 @@
 # Webhook Configuration Description
 
 ## General information and prerequisites
-1. Container images for `token-injector-webhook`, `token-injector` tool and `certificator` tool (see separate [repository](https://github.com/ealebed/admission-webhook-certificator)) should be built and uploaded to the Container Registry accessible from GKE cluster.
+1. Container images for `token-injector-webhook`, `token-injector` tool and `certificator` tool (see separate [repository](https://github.com/PrefectHQ/admission-webhook-certificator)) should be built and uploaded to the Container Registry accessible from GKE cluster.
 
 2. Google Service account which will be used for accessing AWS resources must be created with the following roles:
   - `roles/iam.workloadIdentityUser` - to impersonate service accounts from GKE Workloads
@@ -21,15 +21,15 @@
 
 6. GKE namespaces for Application workload and Admission webhook.
 
-7. GKE Service Account for creation secret (with signed certificate and private key) and running Admission webhook in respective GKE namespace (see example in separate [repository](https://github.com/ealebed/admission-webhook-certificator/blob/master/manifests/service-account.yaml)).
+7. GKE Service Account for creation secret (with signed certificate and private key) and running Admission webhook in respective GKE namespace (see example in separate [repository](https://github.com/PrefectHQ/admission-webhook-certificator/blob/main/manifests/service-account.yaml)).
 
 8. GKE Cluster Role and Cluster Role Binding for Admission webhook Service Account.
 
-9. GKE Cluster Role and Cluster Role Binding for `certificator` tool Service Account (see exapmles in separate [repository](https://github.com/ealebed/admission-webhook-certificator/tree/master/manifests))
+9. GKE Cluster Role and Cluster Role Binding for `certificator` tool Service Account (see exapmles in separate [repository](https://github.com/PrefectHQ/admission-webhook-certificator/tree/main/manifests))
 
 10. Annotated GKE Service Account for running Application workload in respective GKE namespace.
 
-11. GKE Job for `certificator` tool (used for creation secret with signed certificate and private key) (see example in separate [repository](https://github.com/ealebed/admission-webhook-certificator/blob/master/manifests/job.yaml)).
+11. GKE Job for `certificator` tool (used for creation secret with signed certificate and private key) (see example in separate [repository](https://github.com/PrefectHQ/admission-webhook-certificator/blob/main/manifests/job.yaml)).
 
 12. GKE Deployment for running Admission webhook in respective GKE namespace.
 
@@ -39,6 +39,4 @@
 
 ## Configuration steps
 All required steps for configuring Kubernetes Mutating Admission webhook are described in separate documents:
-- [Manual configuration](./docs/manual_configuration.md)
-- [Terraform configuration](./docs/terraform_configuration.md)
-- [HELM chart configuration](./docs/helm_configuration.md)
+- [Helm chart configuration](./docs/helm_configuration.md)

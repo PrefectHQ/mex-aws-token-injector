@@ -10,7 +10,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/ealebed/token-injector/token-injector/internal/gcp"
+	"github.com/PrefectHQ/mex-aws-token-injector/token-injector/internal/gcp"
 
 	"github.com/urfave/cli/v2"
 )

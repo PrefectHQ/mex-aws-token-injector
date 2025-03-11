@@ -1,4 +1,4 @@
-module github.com/ealebed/token-injector/token-injector-webhook
+module github.com/PrefectHQ/mex-aws-token-injector/token-injector-webhook
 
 go 1.24.0
 

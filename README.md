@@ -53,6 +53,6 @@ All required steps for configuring Kubernetes Mutating Admission webhook are des
 When we started to develop an Kubernetes Admission Webhook we notice that there was a requirement that enforced by the apiserver for the admission webhook server and this is TLS connection so apiserver and admission webhook server must connect via TLS with each other. See: [Contacting the webhook](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/#contacting-the-webhook). To ensure that we need a CA (Certificate Authority) and a client certificate which is signed by this CA.
 
 For creation and signing certificate was created separate tool, which could be run as a Kubernetes Job:
-- [Admission webhook certificator](https://github.com/ealebed/admission-webhook-certificator)
+- [Admission webhook certificator](https://github.com/PrefectHQ/admission-webhook-certificator)
 
 I've inspired the initial mutating admission webhook code from [doitintl/gtoken](https://github.com/doitintl/gtoken/tree/master) repository. Big thanks to Alexei Ledenev!

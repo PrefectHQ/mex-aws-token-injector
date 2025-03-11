@@ -161,6 +161,7 @@ jobs:
     needs:
       - get_image_version
       - build_and_push_token_injector_images
+      - check_if_code_changed
     runs-on: ubuntu-latest
     env:
       SHORT_SHA: ${{ needs.get_image_version.outputs.short_sha }}
@@ -214,6 +215,7 @@ jobs:
     needs:
       - get_image_version
       - build_and_push_token_injector_webhook_images
+      - check_if_code_changed
     runs-on: ubuntu-latest
     env:
       SHORT_SHA: ${{ needs.get_image_version.outputs.short_sha }}
