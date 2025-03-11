@@ -86,7 +86,7 @@ jobs:
         if: needs.check_if_code_changed.outputs.check_token_injector == 'true'
         working-directory: ./cmd/token-injector
         run: |
-          docker build "${{ github.workspace }}" --no-cache -t local-mex-aws-token-injector:${{ env.SHORT_SHA }}
+          docker build --no-cache -t local-mex-aws-token-injector:${{ env.SHORT_SHA }} .
       # otherwise, fetch the :latest image from dev
       - name: Fetch latest token-injector image from dev-mex-aws-token-injector
         if: needs.check_if_code_changed.outputs.check_token_injector == 'false'
@@ -134,7 +134,7 @@ jobs:
         if: needs.check_if_code_changed.outputs.check_token_injector_webhook == 'true'
         working-directory: ./cmd/token-injector-webhook
         run: |
-          docker build "${{ github.workspace }}" --no-cache -t local-mex-aws-token-injector-webhook:${{ env.SHORT_SHA }}
+          docker build --no-cache -t local-mex-aws-token-injector-webhook:${{ env.SHORT_SHA }} .
       - name: Fetch latest token-injector-webhook image from dev-mex-aws-token-injector-webhook
         if: needs.check_if_code_changed.outputs.check_token_injector_webhook == 'false'
         run: |
