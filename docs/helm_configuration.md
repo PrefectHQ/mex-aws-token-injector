@@ -1,7 +1,7 @@
 # Webhook Configuration with HELM chart
 
 ## Prerequisites
-- Container images for `token-injector-webhook`, `token-injector` tool and `certificator` tool (see separate [repository](https://github.com/ealebed/admission-webhook-certificator)) should be built and uploaded to the Container Registry accessible from GKE cluster.
+- Container images for `token-injector-webhook`, `token-injector` tool and `certificator` tool (see separate [repository](https://github.com/PrefectHQ/admission-webhook-certificator)) should be built and uploaded to the Container Registry accessible from GKE cluster.
 - Export AWS credentials into environment variables
 ```bash
 export AWS_ACCESS_KEY_ID="aws-access-key-id"

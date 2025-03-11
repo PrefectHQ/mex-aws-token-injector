@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ealebed/token-injector/token-injector/internal/gcp"
+	"github.com/PrefectHQ/mex-aws-token-injector/token-injector/internal/gcp"
 )
 
 //nolint:funlen

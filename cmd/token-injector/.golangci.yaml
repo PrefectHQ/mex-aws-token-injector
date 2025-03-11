@@ -53,7 +53,7 @@ linters-settings:
           - "!$test"
         allow:
           - $gostd
-          - github.com/ealebed/token-injector/token-injector/internal/gcp
+          - github.com/PrefectHQ/mex-aws-token-injector/token-injector/internal/gcp
           - cloud.google.com/go/compute/metadata
           - github.com/dgrijalva/jwt-go
           - github.com/pkg/errors

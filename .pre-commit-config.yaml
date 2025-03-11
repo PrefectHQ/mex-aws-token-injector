@@ -1,0 +1,15 @@
+---
+fail_fast: false
+
+repos:
+  - repo: local
+    hooks:
+      - id: golong-pre-commit
+        name: golong-pre-commit
+        entry: scripts/golong-pre-commit.sh
+        language: script
+        types: [file]
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.1
+    hooks:
+      - id: actionlint

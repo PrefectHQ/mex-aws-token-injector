@@ -44,6 +44,6 @@ FROM scratch
 COPY --from=certs /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 
 # this is the last commabd since it's never cached
-COPY --from=build /go/src/token-injector-webhook/.bin/github.com/ealebed/token-injector/token-injector-webhook /token-injector-webhook
+COPY --from=build /go/src/token-injector-webhook/.bin/github.com/PrefectHQ/mex-aws-token-injector/token-injector-webhook /token-injector-webhook
 
 ENTRYPOINT ["/token-injector-webhook"]

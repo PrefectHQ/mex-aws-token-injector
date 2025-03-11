@@ -180,7 +180,7 @@ func Test_mutatingWebhook_mutatePod(t *testing.T) {
 		{
 			name: "mutate pod",
 			fields: fields{
-				image:      "ealebed/token-injector/token-injector:test",
+				image:      "PrefectHQ/mex-aws-token-injector/token-injector:test",
 				pullPolicy: "Always",
 				volumeName: "test-volume-name",
 				volumePath: "/test-volume-path",
@@ -207,7 +207,7 @@ func Test_mutatingWebhook_mutatePod(t *testing.T) {
 					InitContainers: []corev1.Container{
 						{
 							Name:    "generate-gcp-id-token",
-							Image:   "ealebed/token-injector/token-injector:test",
+							Image:   "PrefectHQ/mex-aws-token-injector/token-injector:test",
 							Command: []string{"/token-injector", "--file=/test-volume-path/test-token", "--refresh=false"},
 							Resources: corev1.ResourceRequirements{
 								Requests: corev1.ResourceList{
@@ -241,7 +241,7 @@ func Test_mutatingWebhook_mutatePod(t *testing.T) {
 						},
 						{
 							Name:    "update-gcp-id-token",
-							Image:   "ealebed/token-injector/token-injector:test",
+							Image:   "PrefectHQ/mex-aws-token-injector/token-injector:test",
 							Command: []string{"/token-injector", "--file=/test-volume-path/test-token", "--refresh=true"},
 							Resources: corev1.ResourceRequirements{
 								Requests: corev1.ResourceList{
