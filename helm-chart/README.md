@@ -1,4 +1,4 @@
-# Kubernetes Mutating Admission webhook HELM chart
+# Kubernetes Token Injector Mutating Admission webhook Helm chart
 
 ## Using the chart:
 - These charts are stored as releases and can be accessed through helm without the need for git credentials as it is public.
