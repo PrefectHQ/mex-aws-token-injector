@@ -6,6 +6,9 @@ name: 'Build and Push Container Images'
       - main
     types:
       - closed
+  push:
+    paths:
+      - '!helm-chart/**'
   workflow_dispatch: {}
 
 jobs:
