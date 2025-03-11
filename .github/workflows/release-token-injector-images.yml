@@ -73,7 +73,7 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           workload_identity_provider: ${{ secrets.GHA_WORKLOAD_IDENTITY_PROVIDER }}
-          service_account: aws-tkn-inject-pr-mrg-wf-main@prefect-org-github-actions.iam.gserviceaccount.com
+          service_account: mex-aws-tkn-inj-pr-mrg-wf-main@prefect-org-github-actions.iam.gserviceaccount.com
       - name: Configure Google Cloud credential helper
         run: gcloud auth configure-docker --quiet us-docker.pkg.dev
       # only build new image if source code was updated
@@ -116,7 +116,7 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           workload_identity_provider: ${{ secrets.GHA_WORKLOAD_IDENTITY_PROVIDER }}
-          service_account: aws-tkn-inject-pr-mrg-wf-main@prefect-org-github-actions.iam.gserviceaccount.com
+          service_account: mex-aws-tkn-inj-pr-mrg-wf-main@prefect-org-github-actions.iam.gserviceaccount.com
       - name: Configure Google Cloud credential helper
         run: gcloud auth configure-docker --quiet us-docker.pkg.dev
       - name: Build container image
@@ -167,7 +167,7 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           workload_identity_provider: ${{ vars.GHA_WORKLOAD_IDENTITY_PROVIDER }}
-          service_account: aws-tkn-inject-pr-mrg-wf-main@prefect-org-github-actions.iam.gserviceaccount.com
+          service_account: mex-aws-tkn-inj-pr-mrg-wf-main@prefect-org-github-actions.iam.gserviceaccount.com
       - name: Configure Google Cloud credential helper
         run: gcloud auth configure-docker --quiet us-docker.pkg.dev
       - name: Run Trivy vulnerability scanner
@@ -220,7 +220,7 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           workload_identity_provider: ${{ vars.GHA_WORKLOAD_IDENTITY_PROVIDER }}
-          service_account: aws-tkn-inject-pr-mrg-wf-main@prefect-org-github-actions.iam.gserviceaccount.com
+          service_account: mex-aws-tkn-inj-pr-mrg-wf-main@prefect-org-github-actions.iam.gserviceaccount.com
       - name: Configure Google Cloud credential helper
         run: gcloud auth configure-docker --quiet us-docker.pkg.dev
       - name: Run Trivy vulnerability scanner
